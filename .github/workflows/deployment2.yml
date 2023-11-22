@@ -9,7 +9,7 @@ jobs:
       - name: install deps
         run: npm ci
       - name: Link
-        run: npm lint
+        run: npm run lint
   test:
     runs-on: ubuntu-latest
     steps:
