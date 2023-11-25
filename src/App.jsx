@@ -12,7 +12,7 @@ function App() {
       </header>
       <MainContent />
     </>
-  );
+  ); 
 }
 
 export default App;
