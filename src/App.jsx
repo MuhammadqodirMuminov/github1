@@ -4,6 +4,7 @@ import logo from './assets/images/logo.png';
 function App() {
 
   // only comments added
+  // another comment here
 
   return (
     <>
