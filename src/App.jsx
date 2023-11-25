@@ -2,6 +2,9 @@ import MainContent from './components/MainContent';
 import logo from './assets/images/logo.png';
 
 function App() {
+
+  // only comments added
+
   return (
     <>
       <header>
