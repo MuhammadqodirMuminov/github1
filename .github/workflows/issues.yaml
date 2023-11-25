@@ -1,8 +1,0 @@
-name: issues
-on: issues
-jobs:
-  issue:
-    runs-on: ubuntu-latest
-    steps:
-      - name: get issue info
-        run: echo "${{ toJson(github) }}"
