@@ -1,12 +1,5 @@
 name: deployment
 on: 
-  pull_request:
-    types:
-      - opened
-    branches:
-      - main
-      - 'dev-*'
-  workflow_dispatch:
   push:
     branches:
       - main
@@ -14,18 +7,27 @@ on:
       - 'dev-*'
       - 'feat/**'
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test app
+        uses: actions/checkout@v3
+      - name: Install dependancies
+        run: npm ci
+      - name: Test
+        run: npm run test
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name : Install deps
+        run: npm ci
+      - name: Build app
+        run: npm run build
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: get-code
-        uses: actions/checkout@v3
-      - name: install deps
-        run: npm ci			
-      - name: Link
-        run: npm run lint
-      - name: Test
-        run: npm run test
-      - name: Build
-        run: npm run build
       - name: Deploy
         run: echo "Deploying..."
