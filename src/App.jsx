@@ -1,21 +1,18 @@
-import MainContent from './components/MainContent';
 import logo from './assets/images/logo.png';
+import MainContent from './components/MainContent';
 
 function App() {
-
-  // only comments added
-
-  return (
-    <>
-      <header>
-        <div id="logo-img">
-          <img src={logo} />
-        </div>
-        <h1>Muhammadqodir Muminov</h1>
-      </header>
-      <MainContent />
-    </>
-  ); 
+	return (
+		<>
+			<header>
+				<div id='logo-img'>
+					<img src={logo} />
+				</div>
+				<h1>Muhammadqodir Muminov</h1>
+			</header>
+			<MainContent />
+		</>
+	);
 }
 
 export default App;
